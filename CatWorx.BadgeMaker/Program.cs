@@ -45,24 +45,15 @@ namespace CatWorx.BadgeMaker
                 return employees;
         }
 
-        static void PrintEmployees(List<Employee> employees) 
-        {
-             Console.WriteLine("The employees are as follows:");
-            for (int i = 0; i < employees.Count; i++)
-                {
-                    string template ="{0,-10}\t{1,-20}\t{2}";
-                      // each item in employees is now an Employee instance
-                      // string format with template formatting check
-                      // basically, offers a template for how to space everything out, then it places each argument in, based on the padding
-                      Console.WriteLine(String.Format(template, employees[i].GetId(), employees[i].GetFullName(), employees[i].GetPhotoUrl()));
-	                }
-            
-        }
+        // static void PrintEmployees(List<Employee> employees) {
+        //   Console.WriteLine("The employees are as follows:");
+        //      }
 
         static void Main(string[] args)
         {
             List<Employee> employees = GetEmployees();
-            PrintEmployees(employees);
+            Util.PrintEmployees(employees);
+            Util.MakeCSV(employees);
         }
     }
 }
