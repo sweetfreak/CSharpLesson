@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 //FOR C# HELP, SEE feature/csharp-syntax BRANCH!!
 // C# uses double quotes!!
@@ -49,11 +50,12 @@ namespace CatWorx.BadgeMaker
         //   Console.WriteLine("The employees are as follows:");
         //      }
 
-        static void Main(string[] args)
+        async static Task Main(string[] args)
         {
             List<Employee> employees = GetEmployees();
             Util.PrintEmployees(employees);
             Util.MakeCSV(employees);
+            await Util.MakeBadges(employees);
         }
     }
 }
