@@ -11,13 +11,10 @@ namespace CatWorx.BadgeMaker
     {
         
 
-        // static void PrintEmployees(List<Employee> employees) {
-        //   Console.WriteLine("The employees are as follows:");
-        //      }
-
         async static Task Main(string[] args)
         {
-            List<Employee> employees = await PeopleFetcher.GetEmployees();
+            // List<Employee> employees =  PeopleFetcher.GetEmployees();
+            List<Employee> employees = await PeopleFetcher.GetFromApi();
             Util.PrintEmployees(employees);
             Util.MakeCSV(employees);
             await Util.MakeBadges(employees);
